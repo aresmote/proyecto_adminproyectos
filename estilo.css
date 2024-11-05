@@ -1,0 +1,237 @@
+/* style.css */
+:root { /*Genera variables, en este caso son colores */
+    --blanco:#ffffff;
+    --oscuro:#212121;
+    --primario:#ffc107;
+    --secundario:#0097a7;
+    --gris:#757575;
+    --grisclaro: #DFE9F3;
+    
+
+}
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+.left{
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 50%;
+      height: 100vh;
+
+    
+}
+
+.right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--oscuro);
+    text-align: center;
+    
+}
+
+.login h2{
+    text-transform: uppercase;
+    color: var(--secundario);
+    font-size: x-large;
+}
+
+.login form input[type="password"]{
+    width: 310px;
+    height: 50px;
+    border: 1px solid var(--oscuro);
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid var(--oscuro);
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: var(--secundario);
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--blanco);
+    transition: background-color 0.2s;
+}
+
+header{
+    background-color: var(--secundario);
+    height: 3rem;
+}
+
+.nav-bg ul {
+    display: flex;
+    justify-content:flex-end;
+    list-style-type: none;
+    background-color: var(--secundario);
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+i {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 20rem;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+i:before, i:after {
+	content: '⥪';
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	z-index: 2;
+	width: 2rem;
+	height: 2rem;
+	background: dodgerblue;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+}
+
+i:after {
+	content: '⥭';
+	left: auto;
+	right: 1rem;
+}
+
+/* I haven't found a way for IE and Edge to let me style inputs that way */
+input {
+	appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50px;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+	transform: translateX(100%);
+	transition: transform ease-in-out 400ms;
+	z-index: 1;
+}
+
+input:focus {
+	outline: none;
+}
+
+input:after {
+	content: attr(title);
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	background-color: rgba(0,0,0,0.4);
+	color: white;
+	padding: .5rem;
+	font-size: 1rem;
+	border-radius: 20px;
+}
+
+input:not(checked):before {
+	content: '';
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	top: 50%;
+	left: calc(-100% + 1rem);
+}
+
+input:checked:before {
+	display: none;
+	left: 1rem;
+}
+
+input:checked {
+	transform: translateX(0);
+	pointer-events: none;
+	z-index: 0;
+	box-shadow: -5px 10px 20px -15px rgba(0,0,0,1);
+}
+
+input:checked + input:before {
+	left: -3rem;
+}
+
+input:checked + input ~ input:before {
+	display: none;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--secundario);
+    color: var(--oscuro);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: var(--primario);
+}
+
+input{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 3rem;
+}
