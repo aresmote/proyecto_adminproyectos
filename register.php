@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
     <title>Registro de Usuario</title>
 </head>
 <body>
@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="container login">
                 <h2>Registro de Usuario</h2>
                 <form method="POST">
-                    <input type="text" name="username" placeholder="Nombre de usuario" required>
-                    <input type="password" name="password" placeholder="Contraseña" required>
-                    <button type="submit">Registrar</button>
+                    <input class="username" type="text" name="username" placeholder="Nombre de usuario" required autocomplete="off">
+                    <input class="password" type="password" name="password" placeholder="Contraseña" required autocomplete="off">
+                    <button type="submit">Iniciar sesión</button>
                 </form>
                 <p>¿Ya tienes una cuenta? <a href="login.php">Inicia sesión</a></p>
             </div>
