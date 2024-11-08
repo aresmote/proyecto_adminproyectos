@@ -7,248 +7,233 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDEX</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Página de Ejemplo</title>
+    <style>
+        :root { /*Genera variables, en este caso son colores */
+            --blanco:#ffffff;
+            --oscuro:#212121;
+            --primario:#ffc107;
+            --secundario:#0097a7;
+            --gris:#757575;
+            --grisclaro: #DFE9F3;
+
+        }
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--grisclaro);
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--secundario);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slider {
+        position: relative;
+        width: 80%;
+        overflow: hidden;
+        margin-bottom: 20px;
+        display: flex; /* Asegura que el slider puede usar flexbox */
+        justify-content: center; /* Centra el contenido horizontalmente */
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%; /* Asegura que las imágenes ocupen el 100% del ancho del slider */
+        }
+
+        .slide {
+            min-width: 100%; /* Cada slide ocupa el 100% del contenedor */
+            box-sizing: border-box;
+            display: flex; /* Usa flexbox para centrar la imagen dentro del slide */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente si es necesario */
+        }
+
+        .slide img {
+            max-width: 70%; /* Asegura que la imagen no exceda el contenedor */
+            height: auto; /* Mantiene la relación de aspecto */
+            display: block; /* Evita espacios en blanco debajo de la imagen */
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            transform: translateY(-50%);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .introduction {
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: var(--oscuro);
+
+            h1{
+                text-transform: uppercase; 
+                color: var(--primario);
+            }
+            p{
+                color: var(--blanco);
+            }
+
+
+        }
+        .blockquotes {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        blockquote {
+            width: 45%;
+            padding: 10px;
+            border-left: 5px solid #ccc;
+            font-style: italic;
+            text-align: center;
+        }
+        .block h1{
+            text-transform: uppercase;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            .blockquotes {
+                flex-direction: column;
+                align-items: center;
+            }
+            blockquote {
+                width: 90%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+
+<header>
     
-    <header class="header inicio">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="img/logo.jpg" alt="Logotipo de Hacking Ético">
-                </a>
-                <div class="derecha">
-                    
-                    <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
+    <nav>
+    <img src="img/logo.jpg" alt="Logo de la Empresa" style="max-width: 200px;">
 
-            </div> <!--.barra-->
+    <a href="#introduccion">Inicio</a>
+    <a href="#seccion1">Recursos</a>
+    <a href="#seccion2">Vulnerabilidad</a>
+    <a href="#seccion3">Practicas</a>
+    <a href="#seccion4">Glosario</a>
+    <a href="#seccion5">Tipo de delitos</a>
+    <a href="logout.php">Cerrar Sesión</a>
+</nav>
+</header>
 
-            <h1>manual hacking ético</h1>
+
+
+<main>
+    <div class="slider">
+        <div class="slides">
+            
+            <div class="slide"><img src="img/slider2.jpeg" alt="Imagen 1"></div>
+            <div class="slide"><img src="img/slider3.jpeg" alt="Imagen 2"></div>
+            <div class="slide"><img src="img/pinguino.png" alt="Imagen 3"></div>
+            
         </div>
-
-    </header>
-
-    <main class="contenedor seccion">
-        <h1>Más Sobre Nosotros</h1>
-
-        <div class="iconos-nosotros">
-            <div class="icono">
-                <img src="build/img/icono1.svg" alt="Icono seguridad" loading="lazy">
-                <h3>Seguridad</h3>
-                <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
-            </div>
-            <div class="icono">
-                <img src="build/img/icono2.svg" alt="Icono Precio" loading="lazy">
-                <h3>Precio</h3>
-                <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
-            </div>
-            <div class="icono">
-                <img src="build/img/icono3.svg" alt="Icono Tiempo" loading="lazy">
-                <h3>A Tiempo</h3>
-                <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
-            </div>
-        </div>
-    </main>
-
-    <section class="seccion contenedor">
-        <h2>Casas y Depas en Venta</h2>
-
-        <div class="contenedor-anuncios">
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio1.webp" type="image/webp">
-                    <source srcset="build/img/anuncio1.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio1.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>Casa de Lujo en el Lago</h3>
-                    <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
-                    <p class="precio">$3,0000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio2.webp" type="image/webp">
-                    <source srcset="build/img/anuncio2.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio2.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>Casa terminados de lujo</h3>
-                    <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
-                    <p class="precio">$3,0000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio3.webp" type="image/webp">
-                    <source srcset="build/img/anuncio3.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio3.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>Casa con alberca</h3>
-                    <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
-                    <p class="precio">$3,0000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-        </div> <!--.contenedor-anuncios-->
-
-        <div class="alinear-derecha">
-            <a href="anuncios.html" class="boton-verde">Ver Todas</a>
-        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <section class="introduction" id="introduccion">
+        <h1>Introducción</h1>
+        <p>En la era digital actual, la ciberseguridad se ha convertido en una prioridad fundamental para individuos, empresas 
+        y gobiernos. A medida que la tecnología avanza, también lo hacen las amenazas que enfrentamos en el ciberespacio. El 
+        hacking ético emerge como una práctica esencial para proteger nuestros sistemas y datos, al identificar y mitigar
+         vulnerabilidades antes de que puedan ser explotadas por actores maliciosos. Este glosario de términos relacionados 
+         con el hacking ético y la ciberseguridad tiene como objetivo proporcionar una comprensión clara de los conceptos
+          clave que rigen este campo en constante evolución. Desde el malware y la ingeniería social hasta las vulnerabilidades
+           de software y los delitos informáticos, cada término es crucial para entender cómo se desarrollan los ataques cibernéticos   
+        y cómo podemos defendernos de ellos. A través de este recurso, que ponemos a su disposición los alumnos de la Benemérita 
+        Universidad Autónoma de Puebla, esperamos empoderar a los lectores con el conocimiento necesario para navegar de manera 
+        segura en el mundo digital y fomentar una cultura de seguridad proactiva.</p>
     </section>
 
-    <section class="imagen-contacto">
-        <h2>Encuentra la casa de tus sueños</h2>
-        <p>Llena el formulario de contacto y un asesor se pondrá en contacto contigo a la brevedad</p>
-        <a href="contacto.html" class="boton-amarillo">Contactános</a>
-    </section>
-
-    <div class="contenedor seccion seccion-inferior">
-        <section class="blog">
-            <h3>Nuestro Blog</h3>
-
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <picture>
-                        <source srcset="build/img/blog1.webp" type="image/webp">
-                        <source srcset="build/img/blog1.jpg" type="image/jpeg">
-                        <img loading="lazy" src="build/img/blog1.jpg" alt="Texto Entrada Blog">
-                    </picture>
-                </div>
-
-                <div class="texto-entrada">
-                    <a href="entrada.html">
-                        <h4>Terraza en el techo de tu casa</h4>
-                        <p class="informacion-meta">Escrito el: <span>20/10/2021</span> por: <span>Admin</span> </p>
-
-                        <p>
-                            Consejos para construir una terraza en el techo de tu casa con los mejores materiales y ahorrando dinero
-                        </p>
-                    </a>
-                </div>
-            </article>
-
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <picture>
-                        <source srcset="build/img/blog2.webp" type="image/webp">
-                        <source srcset="build/img/blog2.jpg" type="image/jpeg">
-                        <img loading="lazy" src="build/img/blog2.jpg" alt="Texto Entrada Blog">
-                    </picture>
-                </div>
-
-                <div class="texto-entrada">
-                    <a href="entrada.html">
-                        <h4>Guía para la decoración de tu hogar</h4>
-                        <p class="informacion-meta">Escrito el: <span>20/10/2021</span> por: <span>Admin</span> </p>
-
-                        <p>
-                            Maximiza el espacio en tu hogar con esta guia, aprende a combinar muebles y colores para darle vida a tu espacio
-                        </p>
-                    </a>
-                </div>
-            </article>
-        </section>
-
-        <section class="testimoniales">
-            <h3>Testimoniales</h3>
-
-            <div class="testimonial">
-                <blockquote>
-                    El personal se comportó de una excelente forma, muy buena atención y la casa que me ofrecieron cumple con todas mis expectativas.
-                </blockquote>
-                <p>- Juan De la torre</p>
-            </div>
-        </section>
+    <div class="blockquotes">
+        <blockquote class="block">
+            <h1><b>glosario</b></h1>
+            <p><b></b></p>
+        </blockquote>
+        <blockquote class="block">
+        <h1><b>Vulnerabilidades</b></h1>
+        </blockquote>
     </div>
 
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
+    <div>
+        <h2>Apartado 1</h2>
+        <p>Contenido del apartado 1.</p>
+    </div>
+    <div>
+        <h2>Apartado 2</h2>
+        <p>Contenido del apartado 2.</p>
+    </div>
+</main>
 
-        <p class="copyright">Todos los derechos Reservados 2021 &copy;</p>
-    </footer>
+<footer>
+    <p>Información de contacto: ejemplo@empresa.com | Tel: 123-456-7890</p>
+</footer>
 
-    <script src="build/js/bundle.min.js"></script>
+<script src="slider.js"></script>
 </body>
 </html>
